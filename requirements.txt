@@ -3,7 +3,7 @@ django==4.1
 
 django-environ==0.9.0
 Pillow==9.3.0
-psycopg2==2.9.5
+psycopg2==2.9.5#Integracion con base de datos postgreSQL
 
 
 
@@ -18,5 +18,5 @@ tzdata==2022.6
 
 
 django-admin-interface==0.20.0   # para cambiar la interface del admin
-django-crispy-forms==1.14.0
-crispy-bootstrap5==0.6
+django-crispy-forms==1.14.0#Usar bootstrap en los formularios por defecto de django
+crispy-bootstrap5==0.6#Usar bootstrap en los formularios por defecto de django
