@@ -1,7 +1,7 @@
 django==4.1 
 django-environ==0.9.0
 Pillow==9.3.0
-psycopg2==2.9.5
+# psycopg2==2.9.5
 
 
 
@@ -9,7 +9,10 @@ asgiref==3.5.2
 setuptools==58.1.0
 sqlparse==0.4.3
 tzdata==2022.6
-
+dj-database-url==1.2.0
+whitenoise==6.2.0
+gunicorn==20.1.0
+psycopg2-binary==2.9.5
 
 
 django-admin-interface==0.20.0   # para cambiar la interface del admin
