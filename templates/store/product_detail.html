@@ -1,0 +1,99 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<section class="section-content padding-y bg">
+    <div class="container mt-5">
+    
+    <!-- ============================ COMPONENT 1 ================================= -->
+    <div class="card">
+        <div class="row no-gutters">
+            <aside class="col-md-6">
+    <article class="gallery-wrap"> 
+        <div class="img-big-wrap">
+           <a href="#"><img src="{{ single_product.images.url }}" class="img-fluid"></a>
+        </div> <!-- img-big-wrap.// -->
+        
+    </article> <!-- gallery-wrap .end// -->
+            </aside>
+            <main class="col-md-6 border-left">
+    <article class="content-body">
+    
+    <h2 class="title ml-3 mt-3">{{ single_product.product_name }}</h2>
+    
+    <div class="mb-3 ml-3"> 
+        <var class="price h4">$ {{ single_product.price }}</var> 
+    </div> 
+    
+    <p class="descProd ml-3"> {{ single_product.description }} </p>
+    
+    
+    <hr>
+        <div class="row ml-3">
+            <div class="item-option-select">
+                <h6>Selecciona Color</h6>
+                <div class="btn-group btn-group-sm btn-group-toggle" data-toggle="buttons">
+                  <label class="btn btn-light">
+                    <input type="radio" name="radio_color"> Plata
+                  </label>
+                  <label class="btn btn-light">
+                    <input type="radio" name="radio_color" > Gris
+                  </label>
+                  <label class="btn btn-light active">
+                    <input type="radio" name="radio_color checked"> Dorado
+                  </label>
+                  <label class="btn btn-light">
+                    <input type="radio" name="radio_color">Negro
+                  </label>
+                </div> 
+            </div>
+        </div> <!-- row.// -->
+        <div class="row ml-3 mt-3">
+            <div class="item-option-select">
+                <h6>Selecciona el tamaño</h6>
+                <div class="btn-group btn-group-sm btn-group-toggle" data-toggle="buttons">
+                  <label class="btn btn-light">
+                    <input type="radio" name="radio_color"> S
+                  </label>
+                  <label class="btn btn-light active">
+                    <input type="radio" name="radio_color" checked> M
+                  </label>
+                  <label class="btn btn-light">
+                    <input type="radio" name="radio_color"> L
+                  </label>
+                  <label class="btn btn-light">
+                    <input type="radio" name="radio_color"> XL
+                  </label>
+                </div> 
+            </div>
+        </div> <!-- row.// -->
+        <hr>
+
+        {% if single_product.stock <= 0 %}
+          <h5>Producto sin stock</h5>
+        {% else %}
+          {% if in_cart %}
+
+          <a href="#" class="btn  btn-success"> <span class="text">Producto agregado al carrito</span> <i class="fas fa-check"></i>  </a>
+          <a href="{% url 'cart' %}" class="btn  btn-outline-primary"> <span class="text">Ver Carrito de compras</span> <i class="fas fa-eye"></i>  </a>
+
+          {% else %}
+          
+            <a href="{% url 'add_cart' single_product.id %}" class="btn  btn-primary ml-3"> <span class="text">Agregar al carrito</span> <i class="fas fa-shopping-cart"></i>  </a>
+          {% endif %}
+
+        {% endif %}
+
+    </article> <!-- product-info-aside .// -->
+            </main> <!-- col.// -->
+        </div> <!-- row.// -->
+    </div> <!-- card.// -->
+    <!-- ============================ COMPONENT 1 END .// ================================= -->
+    
+    <br>    
+    
+    </div> <!-- container .//  -->
+    </section>
+    <!-- ========================= SECTION CONTENT END// ========================= -->
+
+{% endblock %}
