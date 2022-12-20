@@ -11,7 +11,7 @@
 </div> <!-- container //  -->
 </section> {% endcomment %}
 <div class="container-fluid ">
-	<div class="row col-md-6 offset-md-3 "  >
+	<div class="row col-md-6 offset-md-3 my-2 "  >
 	  <div id="carouselStefree" class="carousel slide" data-bs-ride="carousel">
 		<div class="carousel-inner ">
 		  <div class="carousel-item active">
@@ -35,13 +35,19 @@
 	  </div>
 	</div>
   </div>
+  <div class="container-fluid bg-light p-3">
+	<div class="row">
+		<h3 class="section-title col-md-6">Productos populares</h3>
+		<a href="{% url 'store' %}" class="btn btn-outline-success float-right col-md-2 ">Ver Todo</a>
+	</div>
+  </div>
 <!-- ========================= SECTION MAIN END// ========================= -->
 <!-- ========================= SECTION  ========================= -->
 <section class="section-name padding-y-sm">
 <div class="container">
 <header class="section-heading m-3">
 	<a href="{% url 'store' %}" class="btn btn-outline-success float-right">Ver Todo</a>
-	<h3 class="section-title">Productos populares</h3>
+	<!-- <h3 class="section-title">Productos populares</h3> -->
 </header><!-- sect-heading -->
 <div class="row">
 	{% for product in products %}

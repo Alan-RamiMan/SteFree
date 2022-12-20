@@ -31,7 +31,10 @@
                         <form action="" method="post">
                             {% csrf_token %}
                             {{ form|crispy }}
-                            <a href="{% url 'home' %}" >Ir al home</a>
+                            <a href="{% url 'home' %}" >Ir al home</a> |
+                            <a href="{% url 'registro' %}" >Registrate</a>
+
+                            
                             <button type="submit" class="btn btn-primary my-3 offset-md-8" >Ingresar</button>
                     </div>
                 </div>
